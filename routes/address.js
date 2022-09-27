@@ -3,14 +3,17 @@ const Address = require("../models/address");
 const verifyToken = require("../routes/verifyToken");
 
 router.post("/", verifyToken, async (req, res) => {
-  console.log(req.body);
   const newAddress = new Address(req.body);
 
   try {
-    const savedAddress = await newAddress.save();
-    res.status(200).json(savedAddress);
+    if (req.user && req.body.Address!=="") {
+      const savedAddress = await newAddress.save();
+      res.status(200).json(savedAddress);
+    } else {
+      res.status(400).json("not authenticated");
+    }
   } catch (err) {
-    console.log(err);
+    res.status(500).json("not authenticated");
   }
 });
 
