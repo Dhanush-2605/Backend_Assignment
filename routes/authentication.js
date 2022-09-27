@@ -3,11 +3,15 @@ const router = require("express").Router();
 const jwt = require("jsonwebtoken");
 
 router.post("/", async (req, res) => {
-  console.log(req.body.username);
-  console.log(process.env.JWT_SEC);
+  console.log(req.body);
 
   try {
-    if (req.body.username !== "" && req.body.password !== "") {
+    if (
+      req.body.username !== "" &&
+      req.body.password !== "" &&
+      req.body.user !== null &&
+      req.body.password != null
+    ) {
       let payload = {
         user: {
           id: req.username,
