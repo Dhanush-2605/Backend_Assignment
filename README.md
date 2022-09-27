@@ -16,7 +16,7 @@ build a stateless  microservice in Nodejs (Express js) with the following functi
 </ul>
 <img src="https://user-images.githubusercontent.com/90703523/192591391-92a41019-a1e4-40d7-8063-a7dac3191ab6.png" />
 <div>
-<h3>Below mentioned reponse for each routes with images</h3>
+<h3>Below mentioned reponse for each routes with images </h3>
 <div>
 <h1> JSON patching</h1>
 <div>
